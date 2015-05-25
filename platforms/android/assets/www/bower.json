@@ -1,0 +1,28 @@
+{
+  "name": "Todoro",
+  "version": "0.0.1",
+  "authors": [
+    "Lioman <dev@lioman.de>"
+  ],
+  "description": "A simple Todo pomodoro timer",
+  "main": "index.html",
+  "moduleType": [
+    "es6"
+  ],
+  "keywords": [
+    "todo",
+    "pomodoro",
+    "to.txt"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-touch": "~1.3.15"
+  }
+}
