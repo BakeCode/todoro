@@ -10,24 +10,7 @@
 </md-toolbar>
 <div layout="row" flex>
     <div ng-controller="TodoListControl" layout="column" flex id="content">
-        <md-content style="height: 600px;">
-            <md-card ng-show="todoSelected" ng-controller="CircleControl">
-                <md-card-content >
-                    <h2 class="md-title">{{currentTask}}</h2>
-                    <div layout="row"layout-align="space-around">
-                        <md-progress-circular ng-class="circleClass" md-mode="determinate"
-                                              value="{{determinateValue}}">
-                        </md-progress-circular>
-                        <div>{{timeLeft}}</div>
-                    </div>
-
-                </md-card-content>
-                <div class="md-actions" layout="row" layout-align="end center">
-
-                    <md-button data-ng-click="startTimer()">{{startButtonText}}</md-button>
-                </div>
-            </md-card>
-
+        <md-content ng-hide="todoSelected" style="height: 600px;">
             <md-list>
                 <md-list-item class="md-3-line" ng-click="chooseTask(item)" ng-repeat="item in todos">
                     <div class="md-list-item-text">
@@ -44,6 +27,22 @@
         </md-content>
 
         <md-content ng-show="todoSelected" layout="column" flex class="md-padding">
+            <md-card ng-controller="CircleControl">
+                <md-card-content >
+                    <h2 class="md-title">{{currentTask}}</h2>
+                    <div layout="row"layout-align="space-around">
+                        <md-progress-circular ng-class="circleClass" md-mode="determinate"
+                                              value="{{determinateValue}}">
+                        </md-progress-circular>
+                        <div>{{timeLeft}}</div>
+                    </div>
+
+                </md-card-content>
+                <div class="md-actions" layout="row" layout-align="end center">
+
+                    <md-button data-ng-click="startTimer()">{{startButtonText}}</md-button>
+                </div>
+            </md-card>
         </md-content>
 
 
