@@ -1,4 +1,5 @@
-var TodoroApp = angular.module('Todoro', ['ngCordova', 'ngTouch', 'ngMaterial']);
+var TodoroApp = angular.module('Todoro', ['ngCordova',
+    'ngMaterial']);
 TodoroApp.config(function ($mdThemingProvider) {
     $mdThemingProvider.theme('default')
         .primaryPalette('light-green')
@@ -85,11 +86,19 @@ TodoroApp.controller('TodoListControl', function ($scope) {
             project: "+Freetime"
         });
     }
+
     $scope.chooseTask = function (item) {
         $scope.todoSelected = true;
         $scope.currentTask = item.todo;
     }
 });
+
+function onDeviceReady() {
+    console.log('device ready');
+    var domElement = document.getElementById('appIndex');
+    angular.bootstrap(domElement, ["Todoro"]);
+    console.log(cordova.file);
+    }
 
 //var app = {
 //    // Application Constructor

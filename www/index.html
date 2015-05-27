@@ -1,13 +1,20 @@
-<html lang="en" ng-app="Todoro">
+<html id="appIndex" lang="en">
 <head>
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
 </head>
 <body layout="column">
 <md-toolbar layout="row">
     <h1 class="md-toolbar-tools" layout-align-gt-sm="center">Todoro</h1>
+    <span flex></span>
+    <md-button class="md-icon-button" aria-label="Settings">
+        <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+    </md-button>
 </md-toolbar>
+
 <div layout="row" flex>
     <div ng-controller="TodoListControl" layout="column" flex id="content">
         <md-content ng-hide="todoSelected" style="height: 600px;">
@@ -49,6 +56,7 @@
 
     </div>
 </div>
+
 <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
 
 <script type="text/javascript" src="bower_components/ngCordova/dist/ng-cordova.min.js"></script>
@@ -59,9 +67,8 @@
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript">
-    document.addEventListener("deviceready", function () {
-        $cordovaPlugin.someFunction().then(success, error);
-    }, false);
+    document.addEventListener("deviceready", onDeviceReady, false);
+
 </script>
 
 </body>
