@@ -31,27 +31,10 @@
         "is_top_level": true,
         "variables": {}
     },
-    "cordova-plugin-console": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-console"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
     "cordova-plugin-vibration": {
         "source": {
             "type": "registry",
             "id": "cordova-plugin-vibration"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
-    "io.github.pwlin.cordova.plugins.fileopener2": {
-        "source": {
-            "type": "git",
-            "url": "https://github.com/pwlin/cordova-plugin-file-opener2",
-            "subdir": "."
         },
         "is_top_level": true,
         "variables": {}

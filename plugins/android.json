@@ -27,10 +27,6 @@
                         {
                             "xml": "<feature name=\"Vibration\"><param name=\"android-package\" value=\"org.apache.cordova.vibration.Vibration\" /></feature>",
                             "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"FileOpener2\"><param name=\"android-package\" value=\"io.github.pwlin.cordova.plugins.fileopener2.FileOpener2\" /></feature>",
-                            "count": 1
                         }
                     ]
                 }
@@ -52,10 +48,6 @@
                         },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.READ_EXTERNAL_STORAGE\" />",
                             "count": 1
                         }
                     ],
@@ -82,13 +74,7 @@
         "cordova-plugin-media": {
             "PACKAGE_NAME": "com.bakecode.Todoro"
         },
-        "cordova-plugin-console": {
-            "PACKAGE_NAME": "com.bakecode.Todoro"
-        },
         "cordova-plugin-vibration": {
-            "PACKAGE_NAME": "com.bakecode.Todoro"
-        },
-        "io.github.pwlin.cordova.plugins.fileopener2": {
             "PACKAGE_NAME": "com.bakecode.Todoro"
         }
     },
