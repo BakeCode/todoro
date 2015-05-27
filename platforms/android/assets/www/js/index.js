@@ -85,11 +85,19 @@ TodoroApp.controller('TodoListControl', function ($scope) {
             project: "+Freetime"
         });
     }
+
     $scope.chooseTask = function (item) {
         $scope.todoSelected = true;
         $scope.currentTask = item.todo;
     }
 });
+
+function onDeviceReady() {
+    console.log('device ready');
+    var domElement = document.getElementById('appIndex');
+    angular.bootstrap(domElement, ["Todoro"]);
+    console.log(cordova.file);
+    }
 
 //var app = {
 //    // Application Constructor

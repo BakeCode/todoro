@@ -186,13 +186,6 @@ module.exports = [
             "navigator.notification",
             "navigator"
         ]
-    },
-    {
-        "file": "plugins/io.github.pwlin.cordova.plugins.fileopener2/www/plugins.FileOpener2.js",
-        "id": "io.github.pwlin.cordova.plugins.fileopener2.FileOpener2",
-        "clobbers": [
-            "cordova.plugins.fileOpener2"
-        ]
     }
 ];
 module.exports.metadata = 
@@ -202,9 +195,7 @@ module.exports.metadata =
     "cordova-plugin-file": "2.0.0",
     "cordova-plugin-file-transfer": "1.1.0",
     "cordova-plugin-media": "1.0.0",
-    "cordova-plugin-console": "1.0.0",
-    "cordova-plugin-vibration": "1.1.0",
-    "io.github.pwlin.cordova.plugins.fileopener2": "1.0.11"
+    "cordova-plugin-vibration": "1.1.0"
 }
 // BOTTOM OF METADATA
 });
