@@ -7,55 +7,70 @@
           content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
 </head>
 <body layout="column">
-<md-toolbar layout="row">
-    <h1 class="md-toolbar-tools" layout-align-gt-sm="center">Todoro</h1>
-    <span flex></span>
-    <md-button class="md-icon-button" aria-label="More">
-        <md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
-    </md-button>
-</md-toolbar>
 
-<div layout="row" flex>
-    <div ng-controller="TodoListControl" layout="column" flex id="content">
-        <md-content ng-hide="todoSelected" style="height: 600px;">
-            <md-list>
-                <md-list-item class="md-3-line" ng-click="chooseTask(item)" ng-repeat="item in todos">
-                    <div class="md-list-item-text">
-                        <h3>{{item.todo}}</h3>
-                        <h4>{{item.where}}</h4>
+<div ng-controller="MainCtrl" layout="column" style="height:500px;">
+    <section layout="row" flex>
+        <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left"
+                    md-is-locked-open="$mdMedia('gt-md')">
+            <md-toolbar class="md-theme-indigo">
+                <h1 class="md-toolbar-tools">Settings</h1>
+            </md-toolbar>
+            <md-content layout-padding ng-controller="LeftCtrl">
+                <p hide-md show-gt-md>
+                    This sidenav is locked open on your device. To go back to the default behavior,
+                    narrow your display.
+                </p>
+            </md-content>
+        </md-sidenav>
+        <div layout="row" flex>
+            <div ng-controller="TodoListControl" layout="column" flex id="content">
+                <md-toolbar layout="row">
+                    <md-button ng-click="toggleLeft()"
+                               class="md-primary" hide-gt-md>
+                        Toggle left
+                    </md-button>
+                    <h1 class="md-toolbar-tools" layout-align-gt-sm="center">Todoro</h1>
+                </md-toolbar>
+                <md-content ng-hide="todoSelected" style="height: 600px;">
+                    <md-list>
+                        <md-list-item class="md-3-line" ng-click="chooseTask(item)" ng-repeat="item in todos">
+                            <div class="md-list-item-text">
+                                <h3>{{item.todo}}</h3>
+                                <h4>{{item.where}}</h4>
 
-                        <p>
-                            {{item.project}}
-                        </p>
-                    </div>
-                    <md-divider inset></md-divider>
-                </md-list-item>
-            </md-list>
-        </md-content>
+                                <p>
+                                    {{item.project}}
+                                </p>
+                            </div>
+                            <md-divider inset></md-divider>
+                        </md-list-item>
+                    </md-list>
+                </md-content>
 
-        <md-content ng-show="todoSelected" layout="column" flex class="md-padding">
-            <md-card ng-controller="CircleControl">
-                <md-card-content>
-                    <h2 class="md-title">{{currentTask}}</h2>
+                <md-content ng-show="todoSelected" layout="column" flex class="md-padding">
+                    <md-card ng-controller="CircleControl">
+                        <md-card-content>
+                            <h2 class="md-title">{{currentTask}}</h2>
 
-                    <div layout="row" layout-align="space-around">
-                        <md-progress-circular ng-class="circleClass" md-mode="determinate"
-                                              value="{{determinateValue}}">
-                        </md-progress-circular>
-                        <div>{{timeLeft}}</div>
-                    </div>
+                            <div layout="row" layout-align="space-around">
+                                <md-progress-circular ng-class="circleClass" md-mode="determinate"
+                                                      value="{{determinateValue}}">
+                                </md-progress-circular>
+                                <div>{{timeLeft}}</div>
+                            </div>
 
-                </md-card-content>
-                <div class="md-actions" layout="row" layout-align="end center">
+                        </md-card-content>
+                        <div class="md-actions" layout="row" layout-align="end center">
 
-                    <md-button data-ng-click="startTimer()">{{startButtonText}}</md-button>
-                </div>
-            </md-card>
-        </md-content>
-
-
-    </div>
+                            <md-button data-ng-click="startTimer()">{{startButtonText}}</md-button>
+                        </div>
+                    </md-card>
+                </md-content>
+            </div>
+        </div>
+    </section>
 </div>
+
 
 <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
 
