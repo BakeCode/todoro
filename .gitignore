@@ -3,7 +3,7 @@
 *.iml
 out
 gen
-platforms/android/.gradle
+platforms/android/.gradle/
 /www/bower_components
 
 # Mac
