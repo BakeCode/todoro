@@ -17,18 +17,14 @@
             </md-toolbar>
             <md-content layout-padding ng-controller="LeftCtrl">
                 <p hide-md show-gt-md>
-                    This sidenav is locked open on your device. To go back to the default behavior,
-                    narrow your display.
+                    Lorem Ipsum
                 </p>
             </md-content>
         </md-sidenav>
         <div layout="row" flex>
             <div ng-controller="TodoListControl" layout="column" flex id="content">
                 <md-toolbar layout="row">
-                    <md-button ng-click="toggleLeft()"
-                               class="md-primary" hide-gt-md>
-                        <md-icon md-svg-src="img/icons/ic_menu_black_24px.svg" class="s24" alt="Menu"></md-icon>
-                    </md-button>
+                        <md-icon md-svg-src="img/icons/ic_menu_black_24px.svg" class="s24" ng-click="toggleLeft()" alt="Menu"></md-icon>
                     <h1 class="md-toolbar-tools" layout-align-gt-sm="center">Todoro</h1>
                 </md-toolbar>
                 <md-content ng-hide="todoSelected" style="height: 600px;">
